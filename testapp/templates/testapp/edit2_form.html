@@ -1,0 +1,106 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% load static %}
+
+{{ form.errors }}
+{{ form.non_field_errors }}
+
+<style>
+
+    .fixTableHead {   
+    height: 350px;    
+    }
+
+
+    .container {
+        margin: 5px auto;
+        padding: 5px;
+        color: #0c0c0c;
+        font-family: Verdana, Geneva, sans-serif;
+    }
+    .centered{
+      margin: 0 auto;
+    }
+    .rightaligned{
+      margin-right: 0;
+      margin-left: auto;
+    }
+  
+  
+    table, th {
+        border: 1px solid rgb(76, 12, 194);
+        border-collapse: collapse;
+        color: black;
+        padding: 5px;
+        text-align:left;
+    }
+    td {
+      padding: 5px;      
+    }
+    td textarea {
+      resize: none;
+      height: 10em;
+      width: 100%;
+      display: block;
+      box-sizing: border-box;
+    }
+    td:hover {
+      background-color: rgb(53, 34, 219);
+    }
+
+</style>
+
+<main> 
+    <div class="container">  
+
+            <a class="backButton" href="{% url 'students' %}"><i class="fa fa-angle-left" style="font-size:48px;color:red"></i></a>            
+            
+            <form class="form__field"  method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <div class="fixTableHead"> 
+
+                    <h3>Update Details</h3>  
+              
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>User Name</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Mobi No</th>
+                        <th>Email</th>
+                        <th>Total Marks</th>
+                        <th style="text-align: center;">Bio Data</th>
+                      </tr>
+                    </thead>
+                    <tbody>                     
+
+                      <tr>
+                        <td>{{ form.username }}</td>
+                        <td>{{ form.first_name }}</td>
+                        <td>{{ form.last_name }}</td>
+                        <td>{{ form.mobile }}</td>
+                        <td>{{ form.email }}</td>
+                        <td>{{ form.tot_marks }}</td>
+                        <td>{{ form.bio }}</td>
+                      </tr>
+                     
+                    </tbody>
+                </table>
+
+                <input class="btn btn--sub btn--lg  my-md" type="submit" value="Submit" />
+              </div> 
+
+            </form>
+               
+    </div>
+
+</main>
+
+
+{% endblock content %}
