@@ -10,33 +10,30 @@
 <style>
 
     .fixTableHead {
-        margin-left:130px;
-        height: 450px;
-        width: 350px;    
+    margin-left:130px;
+    height: 450px;
+    width: 350px;    
     }
 
-
-    .container {
-        margin: 5px auto;
-        padding: 5px;
+    .container {                
         color: #0c0c0c;
-        font-family: Verdana, Geneva, sans-serif;
+        font-family: Verdana;
     }
     .centered{
       margin: 0 auto;
     }
-    .rightaligned{
-      margin-right: 0;
-      margin-left: auto;
+    
+    h3{
+      color:green;
     }
-  
-  
     table, th {
         border: 1px solid rgb(76, 12, 194);
         border-collapse: collapse;
-        color: black;
-        padding: 10px;
-        text-align:left;
+        color: black;       
+        text-align:left;        
+    }
+    table{
+        height: 350px;
     }
     td {
       padding: 5px;
@@ -50,14 +47,15 @@
       box-sizing: border-box;
     }
     td:hover {
-      background-color: rgb(53, 34, 219);
+      background-color: rgb(173, 169, 185);
     }
 
 </style>
 
 <main> 
+  
     <div class="container-fluid">  
-          <br>
+            <br>
             <a class="backButton" style="margin-left:130px;" href="{% url 'students' %}"><i class="fa fa-angle-left" style="font-size:48px;color:red"></i></a>            
             
             <form class="form__field"  method="POST" enctype="multipart/form-data">
@@ -66,7 +64,7 @@
 
                 <div class="fixTableHead"> 
 
-                    <h3>Update Details</h3>  
+                    <h3>View Details</h3>  
               
 
                 <table class="table">
@@ -98,13 +96,14 @@
                     </tbody>
                 </table>
 
-                <input class="btn btn-success" type="submit" value="Submit" />
+                <a href="{% url 'students' %}">Go Back</a>
+              
               </div> 
 
             </form>
                
     </div>
-
+   
 </main>
 
 

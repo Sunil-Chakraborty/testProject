@@ -12,28 +12,22 @@ def articles(request):
     context={'articles': articles}
     return render(request,'testapp/articles.html',context)
 
-def index(request):  
+def add_student(request):  
     student = StudentForm()
     if request.method == 'POST':
         student = StudentForm(request.POST)
         if student.is_valid():
             student.save()
             return redirect('students')         
-    return render(request,"index.html",{'form':student})
+    return render(request,"testapp/student_frm.html",{'form':student})
+
 
 def viewStudent(request,pk):  
     students = Student.objects.get(id=pk)
     form=StudentForm(instance=students)
-               
-    if request.method == 'POST':
-        form = StudentForm(request.POST,instance=students)                
-        if form.is_valid():              
-            form.save()  
-            return redirect('students')
-        
-    context = {'form':form} 
     
-    return render(request,'testapp/edit2_form.html', context)
+    context = {'form':form} 
+    return render(request,'testapp/view_form.html', context)
 
 
 def updateStudent(request,pk):  

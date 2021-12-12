@@ -1,8 +1,3 @@
-https://github.com/Sunil-Chakraborty/
-https://github.com/Sunil-Chakraborty/test-project.git
-to run git bash:
-source myenv/scripts/activate
-
 Important Notes :
 makemigrations will fail :
 a) if the app is not in "installed app" in settings.py
@@ -60,6 +55,9 @@ django - form has no errors but form.is_valid() doesn't validate:
 From your template, add the following:
 {{ form.errors }}
 {{ form.non_field_errors }}
+
+pip install django-bootstrap-form
+
 
 
 

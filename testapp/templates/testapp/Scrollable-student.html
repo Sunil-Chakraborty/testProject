@@ -9,9 +9,12 @@
 <html>
 
 <head>
- 
-    <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
-	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/> -->
+<!--  
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}"/>
+
+-->
 
 <style>
 
@@ -57,13 +60,13 @@
 
   <table>
 
-	<thead>
-		<tr>
+	<thead >
+		<tr style="color:red;">
             <th style="text-align: left; padding: 8px 15px;">User Name</th>
-            <th>Mobile No.</th>
-            <th>Email</th>
-            <th>Tot Marks</th>
-            <th colspan="3">Actions&nbsp;</th>
+            <th style="text-align: center;">Mobile No.</th>
+            <th style="text-align: center;">Email</th>
+            <th style="text-align: center;">Tot Marks</th>
+            <th style="text-align: center;" colspan="3">Actions&nbsp;</th>
         </tr>
 	</thead>
 
@@ -76,7 +79,7 @@
         <td>{{student.email}}</td>
         <td>{{student.tot_marks}}</td>        
         <td><a style="color:blue;" href="{% url 'update-student' student.id %}">Edit</a></td>
-        <td><a style="color:blue;" href="">View</a></td>
+        <td><a style="color:blue;" href="{% url 'view-student' student.id %}">View</a></td>
         <td><a style="color:red;" href="{% url 'delete-student' student.id %}">Delete</a></td>
 
 		</tr>

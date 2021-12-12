@@ -51,3 +51,8 @@ class Membership(models.Model):
     group = models.ForeignKey(Group, on_delete=models.CASCADE)
     date_joined = models.DateField()
     invite_reason = models.TextField()
+        
+    
+        
+    
+    
